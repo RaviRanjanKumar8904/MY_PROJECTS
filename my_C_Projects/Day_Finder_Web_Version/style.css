@@ -1,0 +1,133 @@
+/* --- Global and Body Styles --- */
+body {
+    font-family: 'Inter', sans-serif;
+    /* A subtle, professional dot pattern */
+    background-color: #f8f9fa; /* Fallback color */
+    background-image: radial-gradient(#e0e6ed 0.5px, transparent 0.5px);
+    background-size: 12px 12px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all elements use border-box sizing */
+* {
+    box-sizing: border-box;
+}
+
+
+/* --- Card Styles --- */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 28rem;
+    border: 1px solid #e5e7eb;
+}
+
+.card h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    color: #111827; 
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+
+/* --- Input & Form Styles --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input-field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    color: #111827;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-field input::placeholder {
+    color: #9ca3af;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); 
+    background-color: #ffffff;
+}
+
+
+/* --- Button Styles --- */
+#findDayButton {
+    width: 100%;
+    background-image: linear-gradient(to right, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px -1px rgba(59, 130, 246, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#findDayButton:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 16px -1px rgba(59, 130, 246, 0.4);
+}
+
+#findDayButton:active {
+    transform: scale(0.98);
+    filter: brightness(1);
+    box-shadow: 0 2px 8px -1px rgba(59, 130, 246, 0.3);
+}
+
+#findDayButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+
+/* --- Result Area Styles --- */
+.result-area {
+    margin-top: 2rem;
+    text-align: center;
+    min-height: 3rem; 
+    padding: 0.5rem;
+}
+
+#errorMessage {
+    color: #dc2626;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+
+#resultMessage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #16a34a;
+}
