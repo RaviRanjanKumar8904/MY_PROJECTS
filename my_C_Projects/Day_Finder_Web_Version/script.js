@@ -100,3 +100,4 @@ findDayButton.addEventListener('click', function() {
     // Show the answer
     resultMessage.textContent = 'The day is ' + dayName + '.';
 });
+// thankyou
