@@ -1,4 +1,4 @@
-# Ravi Ranjan Kumar's Project Portfolio
+# Ravi Ranjan Kumar's Projects
 
 Hello! 👋 Welcome to my projects repository. This file serves as a showcase for the various projects I've worked on.
 
