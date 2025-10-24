@@ -26,27 +26,64 @@ void dayfinder(int d, int m, int y)
     // int Dec = 5;
 
     // Calcuating code of year;
-    int k = y % 4;
-    int code = 6;
-    int code_of_year;
-
-    for (int i = 0; i <= 3; i++)
+    int yearCode;
+    int century = y / 100;
+    for (int i = 1; i <= 3; i++)
     {
-        if (k == i)
+        if (century % 4 == 0)
         {
-            code_of_year = code;
-            break;
+            yearCode = 6;
         }
-        code -= 2;
+        else if (century % 4 == 1)
+        {
+            yearCode = 4;
+        }
+        else if (century % 4 == 2)
+        {
+            yearCode = 2;
+        }
+        else if (century % 4 == 3)
+        {
+            yearCode = 0;
+        }
     }
 
-    // Finding Prerequist;
+    // Extracting last two digit of year.
+    int temp = y, rev = 0, modulo = temp;
+    for (int i = 1; i <= 2; i++)
+    {
+        modulo %= 10;
+        rev += modulo;
+        if (i == 1)
+        {
 
-    int LastTWoDigitOfYear = y % 100;
-    int LastTwoDigitDividedBY4 = LastTWoDigitOfYear / 4;
+            rev *= 10;
+        }
+
+        temp /= 10;
+        modulo = temp;
+    }
+
+    // again revert the rev
+    int rev2 = 0;
+    modulo = rev;
+    for (int i = 1; i <= 2; i++)
+    {
+        modulo %= 10;
+        rev2 += modulo;
+        if (i == 1)
+        {
+            rev2 *= 10;
+        }
+
+        rev /= 10;
+        modulo = rev;
+    }
+
+    int LastTWoDigitOfYear = rev2;
 
     // Finding DAY
-    int day = LastTWoDigitOfYear + LastTwoDigitDividedBY4 + d + code_of_year;
+    int day = LastTWoDigitOfYear + (LastTWoDigitOfYear / 4) + d + yearCode;
     if (m == 1)
     {
         day += 0;
@@ -127,8 +164,6 @@ void dayfinder(int d, int m, int y)
     {
         printf("The day is Saturday.");
     }
-
-    return;
 }
 
 int main()
@@ -160,7 +195,8 @@ int main()
         return 0;
     }
 
-
-    dayfinder(date,month,year);
-
+    dayfinder(date, month, year);
+    return 0;
 }
+
+//thankyou
